@@ -13,10 +13,10 @@
                             数据管理
                         </template>
                         <menu-item name="2-1">
-                            <router-link to="businessGoodsList">商品列表</router-link>
+                            <router-link to="/businessGoodsList">商品列表</router-link>
                         </menu-item>
                         <menu-item name="2-2">
-                            <router-link to="businessOrderList">订单列表</router-link>
+                            <router-link to="/businessOrderList">订单列表</router-link>
                         </menu-item>
                     </Submenu>
                     <Submenu name="3">
@@ -25,7 +25,7 @@
                             添加数据
                         </template>
                         <menu-item name="3-1">
-                            <router-link to="addBusinessGoods">添加商品</router-link>
+                            <router-link to="/addBusinessGoods">添加商品</router-link>
                         </menu-item>
                     </Submenu>
                     <Submenu name="4">
@@ -34,7 +34,7 @@
                             收款
                         </template>
                         <menu-item name="4-1">
-                            <router-link to="businessCollection">处理收款</router-link>
+                            <router-link to="/businessCollection">处理收款</router-link>
                         </menu-item>
                     </Submenu>
                     <Submenu name="5">
@@ -42,9 +42,16 @@
                             <Icon type="ios-analytics"></Icon>
                             图表
                         </template>
-                        <menu-item name="5-1">日销量、营业收入</menu-item>
-                        <menu-item name="5-2">月销量、营业收入</menu-item>
-                        <menu-item name="5-3">季销量、营业收入</menu-item>
+                        <menu-item name="5-1">
+                            <!-- 动态路由 图表路由 -->
+                            <router-link to="/businessStatisticsChart/sevenDaysStatistics">日销量、营业收入</router-link>
+                        </menu-item>
+                        <menu-item name="5-2">
+                            <router-link to="/businessStatisticsChart/monthStatistics">月销量、营业收入</router-link>
+                        </menu-item>
+                        <menu-item name="5-3">
+                            <router-link to="/businessStatisticsChart/quarterStatistics">季销量、营业收入</router-link>
+                        </menu-item>
                     </Submenu>
                 </i-menu>
             </i-col>
