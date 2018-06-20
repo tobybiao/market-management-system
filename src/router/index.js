@@ -27,6 +27,8 @@ const BusinessGoodsList = () => import('@/page/business/BusinessGoodsList')
 const BusinessOrderList = () => import('@/page/business/BusinessOrderList')
 const AddBusinessGoods = () => import('@/page/business/AddBusinessGoods')
 const BusinessCollection = () => import('@/page/business/BusinessCollection')
+// 统计图表
+const StatisticsChart = () => import('@/page/business/StatisticsChart')
 const router = new Router({
     routes: [
         {
@@ -149,6 +151,12 @@ const router = new Router({
                     component: BusinessCollection,
                     name: 'businessCollection',
                     meta: ['收款', '处理收款']
+                },
+                {
+                    path: '/businessStatisticsChart/:statisticsType',
+                    component: StatisticsChart,
+                    name: 'businessStatisticsChart',
+                    meta: ['统计图表']
                 }
             ]
         }
@@ -161,7 +169,7 @@ router.beforeEach((to, from, next) => {
     const adminRouter = ['adminDashboard', 'adminHome', 'businessList', 'marketManagerList', 'addBusiness', 'addMarketManager'] // 管理员路由
     const marketManagerRouter = ['marketManagerDashboard', 'marketGoodsList', 'marketCashierList', 'addMarketGoods', 'addMarketCashier']
     const marketCashierRouter = ['marketCashierDashboard', 'marketCashierCollection']
-    const businessRouter = ['businessDashboard', 'businessHome', 'businessGoodsList', 'businessOrderList', 'addBusinessGoods', 'businessCollection']
+    const businessRouter = ['businessDashboard', 'businessHome', 'businessGoodsList', 'businessOrderList', 'addBusinessGoods', 'businessCollection', 'businessStatisticsChart']
     // let loginUserInfo = store.state.loginUser // id username userType
     let loginUserInfo = getLoginUserFromStorage()
     console.log('从Storage中获取已登录用户信息：')
